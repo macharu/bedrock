@@ -41,6 +41,12 @@ if (file_exists($root_dir . '/.env')) {
     }
 }
 
+Config::define( 'AS3CF_SETTINGS', serialize( array(
+    'provider' => 'aws',
+    'access-key-id' => env('WP_S3_ACCESS_KEY'),
+    'secret-access-key' => env('WP_S3_ACCESS_SECRET_KEY'),
+) ) );
+
 /**
  * Set up our global environment constant and load its config first
  * Default: production
